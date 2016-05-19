@@ -1,4 +1,10 @@
 ###################
+Welcome follow UTeM Coders!
+###################
+
+Greetings! This repo is created for the HiTeaTech Sharing session that is going to be held on 20 May 2016 at FTMK. Feel free to explore this repo as you might learn a few new things!
+
+###################
 What is CodeIgniter
 ###################
 
