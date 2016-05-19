@@ -4,6 +4,7 @@ class Model_todo extends CI_Model {
   public function insert(){
     $this->id = NULL;
     $this->item = $this->input->post('todoItem');
+    $this->status = 'undone';
 
     $this->db->insert('list', $this);
   }
@@ -26,6 +27,15 @@ class Model_todo extends CI_Model {
     );
 
     $this->db->where('id', $this->input->post('id'));
+    $this->db->update('list', $data);
+  }
+
+  public function update_status($id, $status){
+    $data = array(
+      'status' => $status
+    );
+
+    $this->db->where('id', $id);
     $this->db->update('list', $data);
   }
 

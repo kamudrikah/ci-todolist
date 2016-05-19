@@ -13,6 +13,16 @@ class Main extends CI_Controller {
 		$this->load->view('v_main', $data);
 	}
 
+  public function done($id){
+    $this->Model_todo->update_status($id, 'done');
+    header("Location: ".site_url());
+  }
+
+  public function undone($id){
+    $this->Model_todo->update_status($id, 'undone');
+    header("Location: ".site_url());
+  }
+
   public function edit($id){
     $query = $this->Model_todo->select($id);
 

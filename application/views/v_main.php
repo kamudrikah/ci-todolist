@@ -18,8 +18,21 @@
     <?php foreach ($list->result() as $row) { ?>
     <tr>
       <td><?= $row->id; ?></td>
-      <td><?= $row->item; ?></td>
       <td>
+        <?php
+        if($row->status == 'done'){
+          echo '<strike>'.$row->item.'</strike>';
+        } else {
+          echo $row->item;
+        }
+        ?>
+      </td>
+      <td>
+        <?php if($row->status == 'done'){ ?>
+        <a href="<?= site_url('/main/undone/'.$row->id); ?>">Undone</a>
+        <?php } else { ?>
+          <a href="<?= site_url('/main/done/'.$row->id); ?>">Done</a>
+        <?php } ?>
         <a href="<?= site_url('/main/edit/'.$row->id); ?>">Edit</a>
         <a href="<?= site_url('/main/delete/'.$row->id); ?>">Delete</a>
       </td>
