@@ -16,9 +16,6 @@ class Main extends CI_Controller {
   public function edit($id){
     $query = $this->Model_todo->select($id);
 
-    $data['id'] = NULL;
-    $data['item'] = NULL;
-
     foreach ($query->result() as $row) {
       $data['id'] = $row->id;
       $data['item'] = $row->item;
@@ -33,9 +30,6 @@ class Main extends CI_Controller {
   }
 
   public function data_add(){
-    $data["id"] = NULL;
-    $data["item"] = $this->input->post("todoItem");
-
     $this->Model_todo->insert();
     header("Location: ".site_url());
   }

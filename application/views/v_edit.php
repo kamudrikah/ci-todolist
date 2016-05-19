@@ -6,7 +6,7 @@
   </head>
   <body>
     <form action="<?= site_url('main/data_update') ?>" method="post">
-      Item: <input type="text" name="item" value="<?= $item; ?>">
+      Item: <input type="text" name="item" value="<?= $item; ?>" autofocus>
       <input type="hidden" name="id" value="<?= $id; ?>">
       <input type="submit" value="save">
     </form>

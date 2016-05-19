@@ -7,7 +7,7 @@
 <body>
 
   <form action="<?= site_url(); ?>/main/data_add" method="post">
-    ToDo: <input type="text" name="todoItem" placeholder="Item">
+    ToDo: <input type="text" name="todoItem" placeholder="Item" autofocus>
     <button type="submit">Add</button>
   </form>
 
